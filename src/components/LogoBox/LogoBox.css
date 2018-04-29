@@ -1,0 +1,12 @@
+.logo {
+  font-family: 'Pacifico', cursive !important;
+}
+
+
+.logo-bg {
+  background-color: #1B1C1D;
+  width: 100%;
+  padding-top: 25px;
+  padding-bottom: 15px;
+  margin-bottom: -5px;
+}
