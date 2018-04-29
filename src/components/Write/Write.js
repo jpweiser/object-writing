@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Dropdown, Icon, Button} from 'semantic-ui-react';
+import {Dropdown, Icon, Button, Header} from 'semantic-ui-react';
 import WritingForm from '../form/Form';
 
 class Write extends Component {
@@ -18,8 +18,14 @@ class Write extends Component {
         text: '30 seconds',
         value: 30
       }, {
+        text: '1 minute',
+        value: 60
+      }, {
         text: '5 minutes',
         value: 60 * 5
+      }, {
+        text: '10 minutes',
+        value: 60*10
       }
     ]
   }
@@ -29,15 +35,23 @@ class Write extends Component {
   }
 
   handleReset = () => {
-    this.setState({
-      filling: true
-    })
+    this.setState({filling: true})
+  }
+
+  handleChange = (e, {value}) => {
+    this.setState({duration: value});
   }
 
   render() {
     if (this.state.filling) {
       return (<div>
-        <p>Instruction...</p>
+        <Header>Instructions</Header>
+        <p>Select a duration from the drop-down menu below, then hit 'Go.'</p>
+        <p>You will be presented with a random object, and given three seconds to read
+        what the object is before the exercise begins.</p>
+        <p>When the selected duration has lapsed, the writing area will be disabled.
+        Hit 'Clear' to completely deleta all of the writing for that particular exercise.
+        This cannot be undone. The timer will continue. Hit 'Reset' to do another exercise.</p>
         <Icon name='time'/>
         <Dropdown button placeholder='Select Duration:' search selection options={this.durationOptions} onChange={this.handleChange}/>
         <Button onClick={this.handleClick}>Go</Button>
@@ -48,4 +62,4 @@ class Write extends Component {
 
   }
 }
-  export default Write
+export default Write
