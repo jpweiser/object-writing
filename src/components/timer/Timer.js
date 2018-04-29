@@ -6,7 +6,17 @@ class Timer extends Component {
     super(props);
     this.state = {
       duration: this.props.duration,
+      format: true,
     }
+  }
+
+  formatTime = (duration) => {
+    let minutes = Math.floor(duration / 60);
+    let seconds = duration % 60;
+    if (!this.props.format) {
+      return minutes + ':' + ('0' + seconds).slice(-2);
+    }
+    return (minutes > 0 ? minutes + ' minutes ' : '') + seconds + ' seconds';
   }
 
   componentDidMount() {
@@ -32,7 +42,9 @@ class Timer extends Component {
 
   render() {
     return (
-      <h1>{this.state.duration}</h1>
+      <div>
+        {this.formatTime(this.state.duration)}
+      </div>
     )
   }
 
