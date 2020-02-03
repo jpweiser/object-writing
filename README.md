@@ -9,6 +9,8 @@ exercise about the object.
 
 
 ## Build instructions:
+This project contains vulnerabilities used in tooling and technique demonstrations. Use at your own risk.
+
 You will need NodeJS and npm to run the application.
 * Clone the repo.
 * From the project's root directory:
