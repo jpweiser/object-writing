@@ -5,5 +5,12 @@ for (i = 1; i<5; i++) {
   debugger;
 }
 
+localStorage.setItem("login", login);
+sessionStorage.setItem("sessionId", sessionId);
+
+if(unexpectedCondition) {
+  alert("Unexpected Condition");
+}
+
 const val = Math.random(); // Sensitive
 // Check if val is used in a security context.
