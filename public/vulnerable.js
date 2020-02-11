@@ -1,4 +1,9 @@
-var db = window.openDatabase("myDb", "1.0", "Personal secrets stored here", 2*1024*1024); 
+for (i = 1; i<5; i++) {
+  // Print i to the Output window.
+  Debug.write("loop index is " + i);
+  // Wait for user to resume.
+  debugger;
+}
 
 const val = Math.random(); // Sensitive
 // Check if val is used in a security context.
