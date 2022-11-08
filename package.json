@@ -13,7 +13,7 @@
     "superagent": "^3.8.2"
   },
   "devDependencies": {
-    "react-scripts": "1.1.4"
+    "react-scripts": "5.0.1"
   },
   "proxy": "http://localhost:3456",
   "scripts": {
